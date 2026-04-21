@@ -1,0 +1,26 @@
+robot_nav_planner:
+  ros__parameters:
+    # Topics
+    odom_topic: /odom
+    waypoint_topic: /waypoint
+
+    # Map coordinate frame (must match YAML file in maps/ directory)
+    map_origin_x: -9.9
+    map_origin_y: -9.33
+    map_resolution: 0.05
+
+    # Path to the precomputed Laplace potential field
+    phi_file_path: "src/laplace_pathfinder/maps/bookstore_map_phi.npy"
+
+    # Path to save debug output (potential field values along the path)
+    debug_path: "src/laplace_pathfinder/maps/phi_debug.npy"
+
+    # Planner callback timer
+    timer_period_s: 0.5
+
+    # Number of gradient ascent steps to look ahead before publishing the waypoint
+    # The waypoint should be higher than waypoint_tolerance in robot_nav_controller_params.yaml
+    step_lookahead: 3
+
+    # Phi value at which the robot is considered to have reached the goal
+    goal_phi_threshold: 90.0

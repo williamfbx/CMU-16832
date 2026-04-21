@@ -1,0 +1,41 @@
+entities:
+  turtlebot3:
+    model: burger
+
+    start_pose:
+      x: -6.0
+      y: 6.5
+      z: 0.0
+      yaw: 0.0
+
+    goal_pose:
+      x: 7.0
+      y: -6.3
+      z: 0.0
+      yaw: 0.0
+
+simulation:
+  use_sim_time: true
+  # world: aws_robomaker_bookstore_world
+  world: aws_robomaker_dynamic_bookstore_world
+
+
+# entities:
+#   turtlebot3:
+#     model: burger
+
+#     start_pose:
+#       x: -3.5
+#       y: -9.0
+#       z: 0.0
+#       yaw: 0.0
+
+#     goal_pose:
+#       x: 30.0
+#       y: 50.0
+#       z: 0.0
+#       yaw: 0.0
+
+# simulation:
+#   use_sim_time: true
+#   world: dynamic_logistics_warehouse

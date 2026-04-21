@@ -1,0 +1,34 @@
+perturbation:
+  ros__parameters:
+    # Map coordinate frame (must match YAML file in maps/ directory)
+    map_origin_x: -9.9
+    map_origin_y: -9.33
+    map_resolution: 0.05
+
+    # Path to the binary occupancy map (0=free, non-zero=occupied)
+    map_file_path: "src/laplace_pathfinder/maps/bookstore_map.npy"
+
+    # Path to the precomputed Laplace potential field
+    phi_file_path: "src/laplace_pathfinder/maps/bookstore_map_phi.npy"
+
+    # Inflation radius for new dynamic obstacles
+    inflate_radius: 5
+
+    # Solver mode options:
+    # - pure_sor
+    # - nn_warmstart_sor
+    # - nn_only
+    solver_mode: "nn_warmstart_sor"
+
+    # When true, force pure_sor and save supervised training samples
+    data_collection: false
+    data_dir: "src/laplace_pathfinder/data/"
+
+    # SOR solver parameters
+    sor_max_iters: 2000
+    sor_tolerance: 0.001
+    sor_omega: 1.7
+    nn_warmstart_sor_iters: 500
+
+    # TorchScript model (.pt) for NN inference
+    nn_model_path: "src/laplace_pathfinder/models/laplace_nn.pt"
